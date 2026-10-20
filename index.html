@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Chúc Mừng 20/10 - Mở Phong Thư Yêu Thương</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Dancing+Script:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
@@ -18,7 +18,7 @@
       --envelope-pocket: #f5b9cb;
       --text-dark: #4a2533;
       --text-muted: #7e5262;
-      --card-bg: rgba(255, 255, 255, 0.94);
+      --card-bg: rgba(255, 255, 255, 0.95);
     }
 
     * {
@@ -26,14 +26,21 @@
       margin: 0;
       padding: 0;
       user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
     }
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background: radial-gradient(circle at 15% 20%, #ffe3ec 0%, #fff6f8 50%, #fce8ef 100%);
+      background: linear-gradient(135deg, #ffe3ec 0%, #fff6f8 50%, #fce8ef 100%);
+      background-attachment: fixed;
       color: var(--text-dark);
       min-height: 100vh;
-      overflow-x: hidden;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -44,32 +51,32 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       pointer-events: none;
       z-index: 99;
     }
 
     .ambient-glow {
       position: fixed;
-      width: 380px;
-      height: 380px;
+      width: 300px;
+      height: 300px;
       border-radius: 50%;
-      filter: blur(85px);
+      filter: blur(80px);
       z-index: 0;
       pointer-events: none;
-      opacity: 0.55;
+      opacity: 0.45;
     }
 
     .glow-1 {
-      top: -100px;
-      left: -100px;
+      top: -80px;
+      left: -80px;
       background: #ffbfd3;
     }
 
     .glow-2 {
-      bottom: -100px;
-      right: -100px;
+      bottom: -80px;
+      right: -80px;
       background: #ffd1df;
     }
 
@@ -77,7 +84,7 @@
       max-width: 1140px;
       width: 100%;
       margin: 0 auto;
-      padding: 24px 20px;
+      padding: 20px 16px;
       position: relative;
       z-index: 2;
       min-height: 100vh;
@@ -90,28 +97,26 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 16px;
+      padding-bottom: 14px;
       border-bottom: 1px solid rgba(216, 75, 120, 0.15);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       color: var(--primary);
     }
 
     main {
       display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      gap: 40px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+      gap: 36px;
       align-items: center;
-      margin: 30px 0;
+      margin: 24px 0;
+      width: 100%;
     }
 
-    @media (max-width: 880px) {
-      main {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 45px;
-      }
+    .intro-section, .stage-section {
+      min-width: 0;
+      width: 100%;
     }
 
     .intro-section .badge {
@@ -122,14 +127,14 @@
       border-radius: 99px;
       font-size: 0.85rem;
       font-weight: 600;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .intro-section h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 5vw, 4.2rem);
-      line-height: 1.1;
-      margin-bottom: 18px;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      line-height: 1.15;
+      margin-bottom: 16px;
       color: var(--text-dark);
     }
 
@@ -139,30 +144,32 @@
     }
 
     .intro-section p {
-      font-size: 1.03rem;
-      line-height: 1.75;
+      font-size: 1rem;
+      line-height: 1.7;
       color: var(--text-muted);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .intro-section .highlight-recipient {
       font-weight: 600;
       color: var(--text-dark);
-      font-size: 1.15rem;
+      font-size: 1.12rem;
     }
 
     .hint-box {
-      margin-top: 22px;
+      margin-top: 18px;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
-      padding: 10px 18px;
+      padding: 10px 16px;
       background: white;
       border: 1px solid rgba(216, 75, 120, 0.25);
       border-radius: 12px;
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: var(--primary);
       box-shadow: 0 8px 20px rgba(216, 75, 120, 0.08);
+      max-width: 100%;
     }
 
     .stage-section {
@@ -170,7 +177,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 460px;
+      min-height: 420px;
     }
 
     /* Phong thư 3D */
@@ -181,6 +188,7 @@
       flex-direction: column;
       align-items: center;
       transition: opacity 0.6s ease, transform 0.6s ease;
+      max-width: 100%;
     }
 
     .envelope-wrapper.hidden {
@@ -192,8 +200,8 @@
 
     .envelope {
       position: relative;
-      width: 320px;
-      height: 210px;
+      width: 300px;
+      height: 200px;
       background: var(--envelope-body);
       border-radius: 0 0 14px 14px;
       box-shadow: 0 22px 45px rgba(180, 50, 95, 0.22);
@@ -202,12 +210,9 @@
     }
 
     @keyframes floatEnvelope {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: translateY(0px);
       }
-
       50% {
         transform: translateY(-10px);
       }
@@ -216,12 +221,12 @@
     .letter-preview {
       position: absolute;
       bottom: 12px;
-      left: 16px;
-      right: 16px;
-      height: 175px;
+      left: 14px;
+      right: 14px;
+      height: 165px;
       background: #fff;
       border-radius: 10px;
-      padding: 20px 16px;
+      padding: 18px 14px;
       text-align: center;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
       z-index: 2;
@@ -235,13 +240,13 @@
 
     .letter-preview span {
       font-family: 'Dancing Script', cursive;
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       color: var(--primary);
       margin-bottom: 6px;
     }
 
     .letter-preview small {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: var(--text-muted);
     }
 
@@ -261,10 +266,10 @@
       left: 0;
       width: 0;
       height: 0;
-      border-left: 160px solid var(--envelope-pocket);
-      border-right: 160px solid var(--envelope-pocket);
-      border-top: 105px solid transparent;
-      border-bottom: 105px solid #eea4bb;
+      border-left: 150px solid var(--envelope-pocket);
+      border-right: 150px solid var(--envelope-pocket);
+      border-top: 100px solid transparent;
+      border-bottom: 100px solid #eea4bb;
     }
 
     .envelope-flap {
@@ -273,9 +278,9 @@
       left: 0;
       width: 0;
       height: 0;
-      border-left: 160px solid transparent;
-      border-right: 160px solid transparent;
-      border-top: 120px solid var(--envelope-flap);
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      border-top: 115px solid var(--envelope-flap);
       transform-origin: top;
       transition: transform 0.55s ease;
       z-index: 4;
@@ -284,11 +289,11 @@
 
     .wax-seal {
       position: absolute;
-      top: 105px;
+      top: 100px;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 54px;
-      height: 54px;
+      width: 52px;
+      height: 52px;
       background: radial-gradient(circle at 30% 30%, #e65c87, #b32653);
       border-radius: 50%;
       z-index: 5;
@@ -296,7 +301,7 @@
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       box-shadow: 0 6px 16px rgba(160, 20, 65, 0.35), inset 0 0 8px rgba(255, 255, 255, 0.4);
       border: 2px dashed rgba(255, 220, 230, 0.6);
       transition: transform 0.4s ease, opacity 0.4s ease;
@@ -304,12 +309,9 @@
     }
 
     @keyframes sealPulse {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: translate(-50%, -50%) scale(1);
       }
-
       50% {
         transform: translate(-50%, -50%) scale(1.08);
       }
@@ -326,31 +328,35 @@
     }
 
     .envelope.open .letter-preview {
-      transform: translateY(-100px);
+      transform: translateY(-95px);
     }
 
     .click-to-open-text {
-      margin-top: 24px;
+      margin-top: 22px;
       font-weight: 600;
       color: var(--primary);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      text-align: center;
     }
 
     /* Thiệp mở ra */
     .opened-card {
       background: var(--card-bg);
       backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border: 1px solid rgba(255, 255, 255, 0.95);
-      border-radius: 28px;
-      padding: 24px 22px;
-      box-shadow: 0 24px 60px rgba(180, 60, 100, 0.16);
+      border-radius: 24px;
+      padding: 38px 18px 22px 18px;
+      box-shadow: 0 20px 50px rgba(180, 60, 100, 0.15);
       max-width: 530px;
       width: 100%;
+      margin: 0 auto;
       display: none;
       opacity: 0;
       transform: translateY(25px) scale(0.95);
       transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
       position: relative;
+      overflow: hidden;
     }
 
     .opened-card.active {
@@ -361,14 +367,14 @@
 
     .close-letter-btn {
       position: absolute;
-      top: 14px;
-      right: 14px;
-      background: rgba(216, 75, 120, 0.1);
+      top: 12px;
+      right: 12px;
+      background: rgba(216, 75, 120, 0.12);
       color: var(--primary);
       border: none;
       border-radius: 99px;
       padding: 5px 12px;
-      font-size: 0.76rem;
+      font-size: 0.75rem;
       font-weight: 600;
       cursor: pointer;
       z-index: 10;
@@ -378,17 +384,15 @@
     .gallery-filmstrip {
       overflow: hidden;
       width: 100%;
-      padding: 10px 0 16px;
+      padding: 8px 0 14px;
       position: relative;
-      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
     }
 
     .film-track {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       width: max-content;
-      animation: scrollFilm 24s linear infinite;
+      animation: scrollFilm 32s linear infinite;
     }
 
     .film-track:hover {
@@ -399,18 +403,17 @@
       0% {
         transform: translateX(0);
       }
-
       100% {
         transform: translateX(-50%);
       }
     }
 
     .film-item {
-      width: 170px;
+      width: 155px;
       background: #fff;
-      padding: 6px 6px 12px 6px;
+      padding: 6px 6px 10px 6px;
       border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(120, 40, 70, 0.12);
+      box-shadow: 0 6px 16px rgba(120, 40, 70, 0.1);
       border: 1px solid #f5dce4;
       cursor: pointer;
       transition: transform 0.3s ease;
@@ -418,12 +421,12 @@
     }
 
     .film-item:hover {
-      transform: scale(1.05) translateY(-3px);
+      transform: scale(1.04) translateY(-3px);
     }
 
     .film-item img {
       width: 100%;
-      height: 125px;
+      height: 115px;
       object-fit: cover;
       border-radius: 6px;
       display: block;
@@ -431,7 +434,7 @@
 
     .film-item p {
       font-family: 'Dancing Script', cursive;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       text-align: center;
       margin-top: 6px;
       color: var(--text-dark);
@@ -442,7 +445,7 @@
 
     .film-hint {
       text-align: center;
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       color: var(--primary);
       margin-bottom: 12px;
       font-weight: 500;
@@ -451,30 +454,31 @@
     /* Nội dung lời chúc */
     .letter-content {
       text-align: center;
-      padding-top: 8px;
+      padding-top: 10px;
       border-top: 1px solid rgba(216, 75, 120, 0.12);
     }
 
     .letter-content h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.75rem;
+      font-size: clamp(1.4rem, 4.5vw, 1.75rem);
       color: var(--text-dark);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .typewriter-text {
-      font-size: 0.94rem;
+      font-size: 0.92rem;
       line-height: 1.65;
       color: var(--text-muted);
       min-height: 68px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      word-wrap: break-word;
     }
 
     .card-signature {
       font-family: 'Dancing Script', cursive;
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       color: var(--primary);
-      padding-top: 8px;
+      padding-top: 10px;
       border-top: 1px dashed rgba(216, 75, 120, 0.25);
     }
 
@@ -482,14 +486,15 @@
     .lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(45, 15, 25, 0.85);
+      background: rgba(45, 15, 25, 0.88);
       backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       z-index: 200;
       display: none;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 16px;
     }
 
     .lightbox.open {
@@ -497,10 +502,11 @@
     }
 
     .lightbox img {
-      max-width: 90vw;
+      max-width: 92vw;
       max-height: 75vh;
-      border-radius: 14px;
-      border: 6px solid #fff;
+      object-fit: contain;
+      border-radius: 12px;
+      border: 4px solid #fff;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     }
 
@@ -508,26 +514,27 @@
       margin-top: 14px;
       color: #fff;
       font-family: 'Dancing Script', cursive;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       text-align: center;
+      padding: 0 10px;
     }
 
     .music-toggle {
       position: fixed;
-      bottom: 22px;
-      right: 22px;
+      bottom: 18px;
+      right: 18px;
       z-index: 150;
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--primary), #ff8da8);
       color: #fff;
-      border: 3px solid #fff;
-      box-shadow: 0 8px 20px rgba(216, 75, 120, 0.35);
+      border: 2.5px solid #fff;
+      box-shadow: 0 6px 16px rgba(216, 75, 120, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       cursor: pointer;
     }
 
@@ -543,11 +550,38 @@
 
     footer {
       text-align: center;
-      font-size: 0.8rem;
-      letter-spacing: 2px;
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
       color: var(--text-muted);
       padding-top: 16px;
       border-top: 1px solid rgba(216, 75, 120, 0.15);
+    }
+
+    /* Tối ưu hiển thị riêng cho Điện thoại */
+    @media (max-width: 880px) {
+      main {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: center;
+        gap: 32px;
+        margin: 16px 0;
+      }
+
+      .stage-section {
+        min-height: 360px;
+      }
+
+      .opened-card {
+        padding: 36px 14px 18px 14px;
+        border-radius: 20px;
+      }
+
+      .film-item {
+        width: 138px;
+      }
+
+      .film-item img {
+        height: 105px;
+      }
     }
   </style>
 </head>
@@ -571,7 +605,7 @@
         <p class="highlight-recipient" id="ui-recipient"></p>
         <p id="ui-intro-paragraph"></p>
         <div class="hint-box">
-          💌 Bấm vào phong thư bên cạnh để mở thư
+          💌 Bấm vào phong thư để mở thư nhé
         </div>
       </section>
 
@@ -600,7 +634,7 @@
           <div class="gallery-filmstrip">
             <div class="film-track" id="film-track"></div>
           </div>
-          <div class="film-hint">✨ Rê chuột vào ảnh để dừng lại - Bấm vào ảnh để phóng to ✨</div>
+          <div class="film-hint">✨ Chạm vào ảnh để phóng to xem rõ hơn ✨</div>
 
           <div class="letter-content">
             <h2 id="ui-letter-title"></h2>
@@ -699,7 +733,7 @@
       const doubled = [...CONFIG.photos, ...CONFIG.photos];
       filmTrack.innerHTML = doubled.map(item => `
         <div class="film-item" onclick="openLightbox('${item.url}', '${item.caption.replace(/'/g, "\\'")}')">
-          <img src="${item.url}" alt="${item.caption}" />
+          <img src="${item.url}" alt="${item.caption}" loading="lazy" />
           <p>${item.caption}</p>
         </div>
       `).join('');
@@ -805,7 +839,7 @@
     const particles = [];
     const fallingPetals = [];
 
-    for (let i = 0; i < 24; i++) {
+    for (let i = 0; i < 20; i++) {
       fallingPetals.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -828,7 +862,7 @@
           vx: Math.cos(angle) * speed,
           vy: Math.sin(angle) * speed - 1.5,
           gravity: 0.08,
-          size: Math.random() * 18 + 12,
+          size: Math.random() * 16 + 10,
           symbol: symbols[Math.floor(Math.random() * symbols.length)],
           color: colors[Math.floor(Math.random() * colors.length)],
           alpha: 1,
@@ -840,7 +874,7 @@
     let lastTrailTime = 0;
     window.addEventListener('pointermove', (e) => {
       const now = Date.now();
-      if (now - lastTrailTime > 45) {
+      if (now - lastTrailTime > 50) {
         particles.push({
           x: e.clientX,
           y: e.clientY,
@@ -858,7 +892,7 @@
     });
 
     window.addEventListener('pointerdown', (e) => {
-      createBurst(e.clientX, e.clientY, 18);
+      createBurst(e.clientX, e.clientY, 16);
       playMusicIfNeeded();
     });
 
